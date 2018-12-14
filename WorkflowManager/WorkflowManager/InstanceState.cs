@@ -2,12 +2,14 @@
 {
     public enum InstanceState
     {
+        Created,
         Loaded,
         Unloaded,
         Terminated,
         Completed,
-        Persiste,
+        Persisted,
         Idle,
+       Aborted
 
     }
 }
