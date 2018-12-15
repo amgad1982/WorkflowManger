@@ -29,158 +29,219 @@
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
-      <AssemblyReference>System.Web.DynamicData</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Activities.Core.Presentation</AssemblyReference>
+      <AssemblyReference>System.Activities.DurableInstancing</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Web.Entity</AssemblyReference>
       <AssemblyReference>System.Web.ApplicationServices</AssemblyReference>
       <AssemblyReference>System.ComponentModel.DataAnnotations</AssemblyReference>
-      <AssemblyReference>System</AssemblyReference>
-      <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-      <AssemblyReference>System.Web.Extensions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Web</AssemblyReference>
+      <AssemblyReference>System.Web.Abstractions</AssemblyReference>
+      <AssemblyReference>System.Web.Routing</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Configuration</AssemblyReference>
-      <AssemblyReference>System.Web.Services</AssemblyReference>
-      <AssemblyReference>System.EnterpriseServices</AssemblyReference>
-      <AssemblyReference>Microsoft.CodeDom.Providers.DotNetCompilerPlatform</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>Microsoft.Web.Infrastructure</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
-      <AssemblyReference>System.Net.Http.Formatting</AssemblyReference>
       <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Net.Http.Formatting</AssemblyReference>
+      <AssemblyReference>System.Net.Http.WebRequest</AssemblyReference>
+      <AssemblyReference>System.Web.Helpers</AssemblyReference>
       <AssemblyReference>System.Web.Http</AssemblyReference>
       <AssemblyReference>System.Web.Http.WebHost</AssemblyReference>
+      <AssemblyReference>System.Web.Mvc</AssemblyReference>
+      <AssemblyReference>System.Web.Optimization</AssemblyReference>
+      <AssemblyReference>System.Web.Razor</AssemblyReference>
+      <AssemblyReference>System.Web.WebPages</AssemblyReference>
+      <AssemblyReference>System.Web.WebPages.Deployment</AssemblyReference>
+      <AssemblyReference>System.Web.WebPages.Razor</AssemblyReference>
+      <AssemblyReference>WebGrease</AssemblyReference>
+      <AssemblyReference>Antlr3.Runtime</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>Microsoft.AspNet.TelemetryCorrelation</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeDom.Providers.DotNetCompilerPlatform</AssemblyReference>
       <AssemblyReference>WorkflowManager</AssemblyReference>
-      <AssemblyReference>System.Activities</AssemblyReference>
-      <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
-      <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
-      <AssemblyReference>TestWorkflowInMvc</AssemblyReference>
+      <AssemblyReference>WebApplication1</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:WorkflowViewState.IdRef="Flowchart_1">
-    <Flowchart.Variables>
-      <Variable x:TypeArguments="x:Int32" Name="ErrorCounter" />
-    </Flowchart.Variables>
-    <Flowchart.StartNode>
-      <FlowDecision x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-        <FlowDecision.Condition>
-          <mca:CSharpValue x:TypeArguments="x:Boolean">UserName=="amgad"&amp;&amp; Password=="password"</mca:CSharpValue>
-        </FlowDecision.Condition>
-        <FlowDecision.True>
-          <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_2">
-            <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">
-                  <mca:CSharpReference x:TypeArguments="x:String">Result</mca:CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">Success</InArgument>
-              </Assign.Value>
-            </Assign>
-          </FlowStep>
-        </FlowDecision.True>
-        <FlowDecision.False>
-          <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_3">
-            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
-              <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Int32">
-                    <mca:CSharpReference x:TypeArguments="x:Int32">ErrorCounter</mca:CSharpReference>
-                  </OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Int32">
-                    <mca:CSharpValue x:TypeArguments="x:Int32">ErrorCounter+1</mca:CSharpValue>
-                  </InArgument>
-                </Assign.Value>
-              </Assign>
-              <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
+  <StateMachine InitialState="{x:Reference __ReferenceID0}">
+    <State x:Name="__ReferenceID0" DisplayName="Login">
+      <State.Entry>
+        <If>
+          <If.Condition>
+            <InArgument x:TypeArguments="x:Boolean">
+              <mca:CSharpValue x:TypeArguments="x:Boolean">UserName=="amgad"&amp;&amp;Password=="password"</mca:CSharpValue>
+            </InArgument>
+          </If.Condition>
+          <If.Then>
+            <Sequence>
+              <Assign>
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">
                     <mca:CSharpReference x:TypeArguments="x:String">Result</mca:CSharpReference>
                   </OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">Faild try again</InArgument>
+                  <InArgument x:TypeArguments="x:String">Login Successful</InArgument>
                 </Assign.Value>
+                <sap2010:WorkflowViewState.IdRef>Assign_4</sap2010:WorkflowViewState.IdRef>
               </Assign>
-              <wb:GenericDictionaryBookMark BookmarkName="ReEnter" sap2010:WorkflowViewState.IdRef="GenericDictionaryBookMark_1" />
+              <Assign>
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">
+                    <mca:CSharpReference x:TypeArguments="x:Boolean">Successful</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+                <sap2010:WorkflowViewState.IdRef>Assign_5</sap2010:WorkflowViewState.IdRef>
+              </Assign>
+              <sap2010:WorkflowViewState.IdRef>Sequence_3</sap2010:WorkflowViewState.IdRef>
             </Sequence>
-            <FlowStep.Next>
-              <x:Reference>__ReferenceID0</x:Reference>
-            </FlowStep.Next>
-          </FlowStep>
-        </FlowDecision.False>
-      </FlowDecision>
-    </Flowchart.StartNode>
-    <x:Reference>__ReferenceID0</x:Reference>
+          </If.Then>
+          <If.Else>
+            <Sequence>
+              <Assign>
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">
+                    <mca:CSharpReference x:TypeArguments="x:String">Result</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Login faild try again</InArgument>
+                </Assign.Value>
+                <sap2010:WorkflowViewState.IdRef>Assign_6</sap2010:WorkflowViewState.IdRef>
+              </Assign>
+              <Assign>
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">
+                    <mca:CSharpReference x:TypeArguments="x:Boolean">Successful</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                </Assign.Value>
+                <sap2010:WorkflowViewState.IdRef>Assign_7</sap2010:WorkflowViewState.IdRef>
+              </Assign>
+              <wb:GenericStringBookMark BookmarkName="ReEnter">
+                <wb:GenericStringBookMark.Result>
+                  <OutArgument x:TypeArguments="x:String">
+                    <mca:CSharpReference x:TypeArguments="x:String">Result</mca:CSharpReference>
+                  </OutArgument>
+                </wb:GenericStringBookMark.Result>
+                <sap2010:WorkflowViewState.IdRef>GenericStringBookMark_1</sap2010:WorkflowViewState.IdRef>
+              </wb:GenericStringBookMark>
+              <sap2010:WorkflowViewState.IdRef>Sequence_4</sap2010:WorkflowViewState.IdRef>
+            </Sequence>
+          </If.Else>
+          <sap2010:WorkflowViewState.IdRef>If_1</sap2010:WorkflowViewState.IdRef>
+        </If>
+      </State.Entry>
+      <State.Transitions>
+        <Transition DisplayName="T1">
+          <Transition.Condition>
+            <mca:CSharpValue x:TypeArguments="x:Boolean">Successful</mca:CSharpValue>
+          </Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID1" DisplayName="FinalState" IsFinal="True" sap2010:WorkflowViewState.IdRef="State_1" />
+          </Transition.To>
+          <sap2010:WorkflowViewState.IdRef>Transition_1</sap2010:WorkflowViewState.IdRef>
+        </Transition>
+        <Transition DisplayName="T2" To="{x:Reference __ReferenceID0}">
+          <Transition.Condition>
+            <mca:CSharpValue x:TypeArguments="x:Boolean">!Successful</mca:CSharpValue>
+          </Transition.Condition>
+          <sap2010:WorkflowViewState.IdRef>Transition_2</sap2010:WorkflowViewState.IdRef>
+        </Transition>
+      </State.Transitions>
+      <sap2010:WorkflowViewState.IdRef>State_2</sap2010:WorkflowViewState.IdRef>
+    </State>
     <x:Reference>__ReferenceID1</x:Reference>
-    <x:Reference>__ReferenceID2</x:Reference>
-    <sads:DebugSymbol.Symbol>d1dDOlxQcm9qZWN0c1xXb3JrZmxvd01hbmdlclxXb3JrZmxvd01hbmFnZXJcV2ViQXBwbGljYXRpb24xXFdvcmtmbG93U3RvcmVcQWN0aXZpdHkxLnhhbWwOPwN8DwIBAUYLRnoCAR5YDXAYAgEJSg1TFgIBAlkPZBgCARNlD24YAgEMbw9vhAECAQpROFE/AgEITRNNXwIBA2EVYWACARlcFVxmAgEUbDpsSQIBEmgVaGECAQ1vOm9DAgEL</sads:DebugSymbol.Symbol>
-  </Flowchart>
+    <StateMachine.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="Successful" />
+    </StateMachine.Variables>
+    <sap2010:WorkflowViewState.IdRef>StateMachine_1</sap2010:WorkflowViewState.IdRef>
+    <sads:DebugSymbol.Symbol>d1dDOlxQcm9qZWN0c1xXb3JrZmxvd01hbmdlclxXb3JrZmxvd01hbmFnZXJcV2ViQXBwbGljYXRpb24xXFdvcmtmbG93U3RvcmVcQWN0aXZpdHkxLnhhbWwYSwOuARICAQFMBacBDQIBBJsBDZsBgAECAQJOCZMBDgIBEZgBDZgBVgIBC6EBDaEBVwIBBlEPUX0CARJVDW0YAgEtcA2QARgCARdWD2AYAgE1YQ9rGAIBLnEPexgCASZ8D4YBGAIBH4cBD44BKgIBGF06XUoCATtZFVlhAgE2aDtoPwIBNGQVZGYCAS94OnhPAgEsdBV0YQIBJ4MBO4MBQAIBJX8Vf2YCASCHATaHAT8CAR6KARWKAWECARk=</sads:DebugSymbol.Symbol>
+  </StateMachine>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="242,62">
+      <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="264,288">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="FlowStep_2">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">9,339</av:Point>
-            <av:Size x:Key="ShapeSize">242,62</av:Size>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="242,62" />
-      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="242,62" />
-      <sap2010:ViewStateData Id="GenericDictionaryBookMark_1" sap:VirtualizedContainerService.HintSize="242,22" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="200,51">
+      <sap2010:ViewStateData Id="Assign_6" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="GenericStringBookMark_1" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="264,350">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="FlowStep_3">
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="553,500" />
+      <sap2010:ViewStateData Id="State_1" sap:VirtualizedContainerService.HintSize="114,61">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">350,244.5</av:Point>
-            <av:Size x:Key="ShapeSize">200,51</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">450,295.5 450,325.5 240,325.5 240,115.5 317.5,115.5 317.5,127.5</av:PointCollection>
+            <av:Point x:Key="ShapeLocation">330,222.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="FlowDecision_1" sap:VirtualizedContainerService.HintSize="70,87">
+      <sap2010:ViewStateData Id="Transition_1" sap:VirtualizedContainerService.HintSize="430,507">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <av:Point x:Key="ShapeLocation">265,127.5</av:Point>
-            <av:Size x:Key="ShapeSize">70,87</av:Size>
-            <av:PointCollection x:Key="FalseConnector">335,171 580,171 580,270 550,270</av:PointCollection>
-            <av:PointCollection x:Key="TrueConnector">265,171 251,171 251,309 281,309 281,370 251,370</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">118.4,141 118.4,259.1 330,259.1</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">47</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">45</x:Int32>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="625,636">
+      <sap2010:ViewStateData Id="Transition_2" sap:VirtualizedContainerService.HintSize="430,507">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">158.3,141 158.3,155.75 194,155.75 194,125.75 164,125.75</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">75</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">56</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_2" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">50,80</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="StateMachine_1" sap:VirtualizedContainerService.HintSize="614,636">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-            <av:Size x:Key="ShapeSize">60,75</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
-            <x:Double x:Key="Width">611</x:Double>
+            <x:Double x:Key="StateContainerWidth">600</x:Double>
+            <x:Double x:Key="StateContainerHeight">600</x:Double>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,110.5 164,110.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TestWorkflowInMvc.WorkflowStore.Activity1_1" sap:VirtualizedContainerService.HintSize="665,716" />
+      <sap2010:ViewStateData Id="TestWorkflowInMvc.WorkflowStore.Activity1_1" sap:VirtualizedContainerService.HintSize="654,716" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

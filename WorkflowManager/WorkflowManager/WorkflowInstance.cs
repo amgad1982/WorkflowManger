@@ -35,6 +35,7 @@ namespace WorkflowManager
                 this.WorkflowApplicationInstance.Unloaded = workflowInstanceHandeler.OnUnloaded;
                 this.WorkflowApplicationInstance.Aborted = workflowInstanceHandeler.OnAborted;
                 this.WorkflowApplicationInstance.Completed = workflowInstanceHandeler.OnCompleted;
+                
             }
         }
         public IWorkflowInstanceHandeler WorkflowInstanceHandeler { get; private set; }
@@ -43,5 +44,6 @@ namespace WorkflowManager
         public WorkflowApplication WorkflowApplicationInstance { get;private  set; }
         public List<string> Bookmarks { get; private set; }
         public InstanceState State { get; set; }
+        public BookmarkResumptionResult ExecutedBookMarkResult { get; set; }
     }
 }

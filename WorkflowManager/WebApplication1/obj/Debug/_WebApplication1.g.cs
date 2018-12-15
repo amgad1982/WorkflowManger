@@ -75,6 +75,10 @@ namespace XamlStaticHelperNamespace {
                         "5f7f11d50a3a"));
             assemblyList.Add(Load("System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b7" +
                         "7a5c561934e089"));
+            assemblyList.Add(Load("System.ServiceModel.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=" +
+                        "31bf3856ad364e35"));
+            assemblyList.Add(Load("System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c56193" +
+                        "4e089"));
             assemblyList.Add(Load("System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf385" +
                         "6ad364e35"));
             assemblyList.Add(Load("System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=" +

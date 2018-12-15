@@ -96,3 +96,8 @@ C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\TestWorkflo
 C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\AC2C1ABA-CCF6-44D4-8127-588FD4D0A860-DeferredValidationErrors.xml
 C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\WebApplication1.csproj.FileListAbsolute.txt
+C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\Activity2.g.xaml
+C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\WebApplication1.WorkflowStore_Activity2_BeforeInitializeComponentHelper.txt
+C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\Activity2.g.cs
+C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\WebApplication1.WorkflowStore_Activity2_BeforeInitializeComponentHelper.cs
+C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\WebApplication1.WorkflowStore_Activity2_CompiledExpressionRoot.cs

@@ -29,17 +29,28 @@ namespace WebApplication1.Controllers
         public Guid Post([FromBody]WorkFlowCommand command)
         {
             var argument = new Dictionary<string, object>();
-            argument.Add("UserName", command.UserName);
-            argument.Add("Password", command.Password);
-            argument.Add("Result", "");
+            //argument.Add("UserName", command.UserName);
+            //argument.Add("Password", command.Password);
+            //argument.Add("Result", "");
+            //manager = new WorkflowManager.WorkflowManager(wfRepoPath, true, false, this, this);
+            //if (command.InstanceId == Guid.Empty)
+            //{
+            //    return manager.NewWorkFlow("Activity1.xaml", argument);
+            //}
+            //else
+            //{
+            //    return manager.LoadWorkFlowWithBookMarkResume(command.InstanceId, "ReEnter", argument).InstanceId;
+            //}
+            argument.Add("Name", command.UserName);
+            argument.Add("Message", "");
             manager = new WorkflowManager.WorkflowManager(wfRepoPath, true, false, this, this);
             if (command.InstanceId == Guid.Empty)
             {
-                return manager.NewWorkFlow("Activity1.xaml", argument);
+                return manager.NewWorkFlow("Activity2.xaml", argument);
             }
             else
             {
-                return manager.LoadWorkFlowWithBookMarkResume(command.InstanceId, "ReEnter", argument).InstanceId;
+                return manager.LoadWorkFlowWithBookMarkResume(command.InstanceId, "EnterName", argument["Name"]).InstanceId;
             }
         }
 
@@ -55,7 +66,7 @@ namespace WebApplication1.Controllers
 
         public void Log(string message, LoggerInfoTypes infoType)
         {
-
+            Console.WriteLine("Error:" + message);
         }
     }
 }

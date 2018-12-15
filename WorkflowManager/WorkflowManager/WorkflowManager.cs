@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Activities;
 using System.Activities.DurableInstancing;
+using System.Activities.Tracking;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -40,7 +41,6 @@ namespace WorkflowManager
             //determined upon requests.
             throw new NotImplementedException();
         }
-        AutoResetEvent syncEvent = new AutoResetEvent(false);
         public WorkflowInstance LoadWorkflow(Guid instanceId)
         {
             var instance = this._repository.LoadWorkflowInstance(instanceId);
@@ -48,7 +48,12 @@ namespace WorkflowManager
             if (activity != null)
             {
                 WorkflowApplication app = new WorkflowApplication(activity);
-
+                app.Extensions.Add(() =>
+                {
+                    TrackingParticipant participant = new LoggerTrackingParticipant(this._infoLogger);
+                    participant.TrackingProfile = CreateTrackingProfile();
+                    return participant;
+                });
                 if (this._isPersistable)
                 {
                     //setup persistence
@@ -60,13 +65,14 @@ namespace WorkflowManager
                     handle.Free();
                     store.DefaultInstanceOwner = view.InstanceOwner;
                     app.InstanceStore = store;
-                    app.PersistableIdle = (e) => { return PersistableIdleAction.Unload; };
+                    app.PersistableIdle = (e) => { return PersistableIdleAction.Persist; };
 
                 }
                 try
                 {
                     app.Load(instanceId);
                     app.Run();
+                    
                     instance.SetApplicationhost(app);
                     instance.SetWorkflowInstanceHandeler(this);
                    
@@ -74,7 +80,7 @@ namespace WorkflowManager
                     instance.InstanceId = instanceId;
                     this._managedWorkflows.Add(instance);
                     this._repository.UpdateWorkflowInstanceState(app.Id, InstanceState.Loaded, instance.Bookmarks.ConvertStringListToCommaSeparatedString());
-                    syncEvent.WaitOne();
+                    
                     return instance;
                 }
                 catch (Exception ex)
@@ -89,7 +95,8 @@ namespace WorkflowManager
         public WorkflowInstance LoadWorkFlowWithBookMarkResume(Guid instanceId, string bookmarkName,object value)
         {
             var instance = this.LoadWorkflow(instanceId);
-            instance.WorkflowApplicationInstance.ResumeBookmark(bookmarkName, value);
+            
+            instance.ExecutedBookMarkResult =instance.WorkflowApplicationInstance.ResumeBookmark(bookmarkName, value);
             return instance;
         }
 
@@ -99,7 +106,13 @@ namespace WorkflowManager
             if (activity != null)
             {
                 WorkflowApplication app = new WorkflowApplication(activity);
-
+                app.Extensions.Add(() =>
+                {
+                    TrackingParticipant participant = new LoggerTrackingParticipant(this._infoLogger);
+                     participant.TrackingProfile = CreateTrackingProfile();
+                    return participant;
+                });
+               
                 if (this._isPersistable)
                 {
                     //setup persistence
@@ -111,7 +124,7 @@ namespace WorkflowManager
                     handle.Free();
                     store.DefaultInstanceOwner = view.InstanceOwner;
                     app.InstanceStore = store;
-                    app.PersistableIdle = (e) => { return PersistableIdleAction.Unload; };
+                    app.PersistableIdle = (e) => { return PersistableIdleAction.Persist; };
                     
                 }
                 try
@@ -122,7 +135,6 @@ namespace WorkflowManager
                     wfinstance.InstanceId = app.Id;
                     this._managedWorkflows.Add(wfinstance);
                     this._repository.SaveWorkflowInstanceState(app.Id, workflowName, InstanceState.Created, string.Empty);
-                    syncEvent.WaitOne();
                     return app.Id;
                 }
                 catch(Exception ex)
@@ -133,44 +145,73 @@ namespace WorkflowManager
             }
             return Guid.Empty;
         }
+        TrackingProfile CreateTrackingProfile()
+        {
+            TrackingProfile trackingProfile = new TrackingProfile()
+            {
+                Name = "CustomTrackingProfile",
+                Queries =
+                {
+                    new CustomTrackingQuery()
+                    {
+                        Name = "*",
+                        ActivityName = "*"
+                    },
+                    new WorkflowInstanceQuery()
+                    {
+                        States = {"*"}
+                    }
+                }
+            };
 
+            if (this._isTrackable)
+            {
+                trackingProfile.Queries.Add(
+                    new ActivityStateQuery()
+                    {
+
+                        ActivityName = "*",
+                        States = { "*" },
+                        Variables = { "*" }
+                    });
+                trackingProfile.Queries.Add(
+                    new ActivityScheduledQuery() { ChildActivityName = "*" });
+            }
+
+            return trackingProfile;
+        }
         public void OnAborted(WorkflowApplicationAbortedEventArgs e)
         {
-            syncEvent.Set();
             this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Aborted, string.Empty);
         }
 
         public void OnCompleted(WorkflowApplicationCompletedEventArgs e)
         {
-            syncEvent.Set();
             this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Completed, string.Empty);
         }
 
         public void OnIdle(WorkflowApplicationIdleEventArgs e)
         {
-            syncEvent.Set();
             this._managedWorkflows.First(wf => wf.InstanceId == e.InstanceId).SetBookMarks( e.Bookmarks.Select(b => b.BookmarkName).ToList());
             this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Idle, e.Bookmarks.ConvertBookmakListToCommaSeparatedString());
         }
 
         public UnhandledExceptionAction OnUnhandledException(WorkflowApplicationUnhandledExceptionEventArgs e)
         {
-            syncEvent.Set();
             this._errorLogger.Log("istance id:" + e.InstanceId + " has exception :" + e.UnhandledException.Message, LoggerInfoTypes.Error);
             return UnhandledExceptionAction.Abort;
+            
         }
 
         public void OnUnloaded(WorkflowApplicationEventArgs e)
         {
-            syncEvent.Set();
-            this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Unloaded, this._managedWorkflows.First(wf => wf.InstanceId == e.InstanceId).Bookmarks.ConvertStringListToCommaSeparatedString());
+            //this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Unloaded, this._managedWorkflows.First(wf => wf.InstanceId == e.InstanceId).Bookmarks.ConvertStringListToCommaSeparatedString());
         }
 
        
 
         public void Terminate(Guid instanceId)
         {
-            syncEvent.Set();
             //future work terminate list of workflows, we need to add loadworkflows by list of ids.
             this._managedWorkflows.First(wf => wf.InstanceId == instanceId).WorkflowApplicationInstance.Terminate("terminated by user");
             this._repository.UpdateWorkflowInstanceState(instanceId, InstanceState.Terminated, string.Empty);

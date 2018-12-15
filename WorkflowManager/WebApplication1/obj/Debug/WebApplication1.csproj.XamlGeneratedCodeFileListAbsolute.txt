@@ -1,4 +1,7 @@
 obj\Debug\_WebApplication1.g.cs
 obj\Debug\Activity1.g.cs
+obj\Debug\Activity2.g.cs
 obj\Debug\TestWorkflowInMvc.WorkflowStore_Activity1_BeforeInitializeComponentHelper.cs
+obj\Debug\WebApplication1.WorkflowStore_Activity2_BeforeInitializeComponentHelper.cs
 C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\TestWorkflowInMvc.WorkflowStore_Activity1_CompiledExpressionRoot.cs
+C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\WebApplication1.WorkflowStore_Activity2_CompiledExpressionRoot.cs

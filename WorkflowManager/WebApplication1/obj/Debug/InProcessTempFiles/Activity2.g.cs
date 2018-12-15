@@ -9,19 +9,17 @@
 //------------------------------------------------------------------------------
 
 
-namespace TestWorkflowInMvc.WorkflowStore {
+namespace WebApplication1.WorkflowStore {
     
     
     [System.Runtime.InteropServices.ComVisible(false)]
-    public partial class Activity1 : System.Activities.Activity, System.ComponentModel.ISupportInitialize {
+    public partial class Activity2 : System.Activities.Activity, System.ComponentModel.ISupportInitialize {
         
         private bool _contentLoaded;
         
-        private System.Activities.InArgument<string> _UserName;
+        private System.Activities.OutArgument<string> _Message;
         
-        private System.Activities.InArgument<string> _Password;
-        
-        private System.Activities.InOutArgument<string> _Result;
+        private System.Activities.InArgument<string> _Name;
         
 partial void BeforeInitializeComponent(ref bool isInitialized);
 
@@ -29,34 +27,25 @@ partial void AfterInitializeComponent();
 
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("XamlBuildTask", "15.0.0.0")]
-        public Activity1() {
+        public Activity2() {
             this.InitializeComponent();
         }
         
-        public System.Activities.InArgument<string> UserName {
+        public System.Activities.OutArgument<string> Message {
             get {
-                return this._UserName;
+                return this._Message;
             }
             set {
-                this._UserName = value;
+                this._Message = value;
             }
         }
         
-        public System.Activities.InArgument<string> Password {
+        public System.Activities.InArgument<string> Name {
             get {
-                return this._Password;
+                return this._Name;
             }
             set {
-                this._Password = value;
-            }
-        }
-        
-        public System.Activities.InOutArgument<string> Result {
-            get {
-                return this._Result;
-            }
-            set {
-                this._Result = value;
+                this._Name = value;
             }
         }
         
@@ -77,7 +66,7 @@ partial void AfterInitializeComponent();
                 return;
             }
             string resourceName = this.FindResource();
-            System.IO.Stream initializeXaml = typeof(Activity1).Assembly.GetManifestResourceStream(resourceName);
+            System.IO.Stream initializeXaml = typeof(Activity2).Assembly.GetManifestResourceStream(resourceName);
             System.Xml.XmlReader xmlReader = null;
             System.Xaml.XamlReader reader = null;
             System.Xaml.XamlObjectWriter objectWriter = null;
@@ -90,7 +79,7 @@ partial void AfterInitializeComponent();
                 reader = new System.Xaml.XamlXmlReader(xmlReader, schemaContext, readerSettings);
                 System.Xaml.XamlObjectWriterSettings writerSettings = new System.Xaml.XamlObjectWriterSettings();
                 writerSettings.RootObjectInstance = this;
-                writerSettings.AccessLevel = System.Xaml.Permissions.XamlAccessLevel.PrivateAccessTo(typeof(Activity1));
+                writerSettings.AccessLevel = System.Xaml.Permissions.XamlAccessLevel.PrivateAccessTo(typeof(Activity2));
                 objectWriter = new System.Xaml.XamlObjectWriter(schemaContext, writerSettings);
                 System.Xaml.XamlServices.Transform(reader, objectWriter);
             }
@@ -110,10 +99,10 @@ partial void AfterInitializeComponent();
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("XamlBuildTask", "15.0.0.0")]
         private string FindResource() {
-            string[] resources = typeof(Activity1).Assembly.GetManifestResourceNames();
+            string[] resources = typeof(Activity2).Assembly.GetManifestResourceNames();
             for (int i = 0; (i < resources.Length); i = (i + 1)) {
                 string resource = resources[i];
-                if ((resource.Contains(".Activity1.g.xaml") || resource.Equals("Activity1.g.xaml"))) {
+                if ((resource.Contains(".Activity2.g.xaml") || resource.Equals("Activity2.g.xaml"))) {
                     return resource;
                 }
             }

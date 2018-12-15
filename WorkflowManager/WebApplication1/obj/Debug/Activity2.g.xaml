@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ww:Activity2 xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:wb="clr-namespace:WorkflowManager.BookMarkActivities;assembly=WorkflowManager" xmlns:ww="clr-namespace:WebApplication1.WorkflowStore;assembly=WebApplication1" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Activities.Core.Presentation</AssemblyReference>
+      <AssemblyReference>System.Activities.DurableInstancing</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Web.Entity</AssemblyReference>
+      <AssemblyReference>System.Web.ApplicationServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.DataAnnotations</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Web</AssemblyReference>
+      <AssemblyReference>System.Web.Abstractions</AssemblyReference>
+      <AssemblyReference>System.Web.Routing</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Configuration</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>Microsoft.Web.Infrastructure</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Net.Http.Formatting</AssemblyReference>
+      <AssemblyReference>System.Net.Http.WebRequest</AssemblyReference>
+      <AssemblyReference>System.Web.Helpers</AssemblyReference>
+      <AssemblyReference>System.Web.Http</AssemblyReference>
+      <AssemblyReference>System.Web.Http.WebHost</AssemblyReference>
+      <AssemblyReference>System.Web.Mvc</AssemblyReference>
+      <AssemblyReference>System.Web.Optimization</AssemblyReference>
+      <AssemblyReference>System.Web.Razor</AssemblyReference>
+      <AssemblyReference>System.Web.WebPages</AssemblyReference>
+      <AssemblyReference>System.Web.WebPages.Deployment</AssemblyReference>
+      <AssemblyReference>System.Web.WebPages.Razor</AssemblyReference>
+      <AssemblyReference>WebGrease</AssemblyReference>
+      <AssemblyReference>Antlr3.Runtime</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>Microsoft.AspNet.TelemetryCorrelation</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeDom.Providers.DotNetCompilerPlatform</AssemblyReference>
+      <AssemblyReference>WorkflowManager</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>WebApplication1</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <ww:Activity2.Implementation>
+    <Sequence>
+      <wb:GenericStringBookMark BookmarkName="EnterName" />
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">
+            <mca:CSharpReference x:TypeArguments="x:String">Message</mca:CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String">"Hello "+Name</mca:CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+      <sads:DebugSymbol.Symbol>9xDM6tvvT0hauSO7JB6gviNKV0M6XFByb2plY3RzXFdvcmtmbG93TWFuZ2VyXFdvcmtmbG93TWFuYWdlclxXZWJBcHBsaWNhdGlvbjFcV29ya2Zsb3dTdG9yZVxBY3Rpdml0eTIueGFtbAZLA1oOAgEBTAVMdAIBCU0FWA4CAQJMLEw3AgEKVQtVVgIBBlALUFgCAQM=</sads:DebugSymbol.Symbol>
+    </Sequence>
+  </ww:Activity2.Implementation>
+</ww:Activity2>
