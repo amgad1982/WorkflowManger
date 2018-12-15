@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Runtime.DurableInstancing;
+using System.Threading;
+
 namespace WorkflowManager
 {
     public class WorkflowManager : IWorkflowManager,IWorkflowInstanceHandeler
@@ -38,7 +40,7 @@ namespace WorkflowManager
             //determined upon requests.
             throw new NotImplementedException();
         }
-
+        AutoResetEvent syncEvent = new AutoResetEvent(false);
         public WorkflowInstance LoadWorkflow(Guid instanceId)
         {
             var instance = this._repository.LoadWorkflowInstance(instanceId);
@@ -72,6 +74,7 @@ namespace WorkflowManager
                     instance.InstanceId = instanceId;
                     this._managedWorkflows.Add(instance);
                     this._repository.UpdateWorkflowInstanceState(app.Id, InstanceState.Loaded, instance.Bookmarks.ConvertStringListToCommaSeparatedString());
+                    syncEvent.WaitOne();
                     return instance;
                 }
                 catch (Exception ex)
@@ -119,7 +122,7 @@ namespace WorkflowManager
                     wfinstance.InstanceId = app.Id;
                     this._managedWorkflows.Add(wfinstance);
                     this._repository.SaveWorkflowInstanceState(app.Id, workflowName, InstanceState.Created, string.Empty);
-                   
+                    syncEvent.WaitOne();
                     return app.Id;
                 }
                 catch(Exception ex)
@@ -133,28 +136,33 @@ namespace WorkflowManager
 
         public void OnAborted(WorkflowApplicationAbortedEventArgs e)
         {
+            syncEvent.Set();
             this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Aborted, string.Empty);
         }
 
         public void OnCompleted(WorkflowApplicationCompletedEventArgs e)
         {
+            syncEvent.Set();
             this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Completed, string.Empty);
         }
 
         public void OnIdle(WorkflowApplicationIdleEventArgs e)
         {
+            syncEvent.Set();
             this._managedWorkflows.First(wf => wf.InstanceId == e.InstanceId).SetBookMarks( e.Bookmarks.Select(b => b.BookmarkName).ToList());
             this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Idle, e.Bookmarks.ConvertBookmakListToCommaSeparatedString());
         }
 
         public UnhandledExceptionAction OnUnhandledException(WorkflowApplicationUnhandledExceptionEventArgs e)
         {
+            syncEvent.Set();
             this._errorLogger.Log("istance id:" + e.InstanceId + " has exception :" + e.UnhandledException.Message, LoggerInfoTypes.Error);
             return UnhandledExceptionAction.Abort;
         }
 
         public void OnUnloaded(WorkflowApplicationEventArgs e)
         {
+            syncEvent.Set();
             this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Unloaded, this._managedWorkflows.First(wf => wf.InstanceId == e.InstanceId).Bookmarks.ConvertStringListToCommaSeparatedString());
         }
 
@@ -162,6 +170,7 @@ namespace WorkflowManager
 
         public void Terminate(Guid instanceId)
         {
+            syncEvent.Set();
             //future work terminate list of workflows, we need to add loadworkflows by list of ids.
             this._managedWorkflows.First(wf => wf.InstanceId == instanceId).WorkflowApplicationInstance.Terminate("terminated by user");
             this._repository.UpdateWorkflowInstanceState(instanceId, InstanceState.Terminated, string.Empty);

@@ -13,7 +13,7 @@
   <x:Members>
     <x:Property Name="UserName" Type="InArgument(x:String)" />
     <x:Property Name="Password" Type="InArgument(x:String)" />
-    <x:Property Name="Result" Type="OutArgument(x:String)" />
+    <x:Property Name="Result" Type="InOutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>TestWorkflowInMvc.WorkflowStore.Activity1_1</sap2010:WorkflowViewState.IdRef>
@@ -70,8 +70,8 @@
           <mca:CSharpValue x:TypeArguments="x:Boolean">UserName=="amgad"&amp;&amp; Password=="password"</mca:CSharpValue>
         </FlowDecision.Condition>
         <FlowDecision.True>
-          <FlowStep x:Name="__ReferenceID2">
-            <Assign>
+          <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+            <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">
                   <mca:CSharpReference x:TypeArguments="x:String">Result</mca:CSharpReference>
@@ -80,15 +80,13 @@
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">Success</InArgument>
               </Assign.Value>
-              <sap2010:WorkflowViewState.IdRef>Assign_1</sap2010:WorkflowViewState.IdRef>
             </Assign>
-            <sap2010:WorkflowViewState.IdRef>FlowStep_2</sap2010:WorkflowViewState.IdRef>
           </FlowStep>
         </FlowDecision.True>
         <FlowDecision.False>
-          <FlowStep x:Name="__ReferenceID1">
-            <Sequence>
-              <Assign>
+          <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">
                     <mca:CSharpReference x:TypeArguments="x:Int32">ErrorCounter</mca:CSharpReference>
@@ -99,9 +97,8 @@
                     <mca:CSharpValue x:TypeArguments="x:Int32">ErrorCounter+1</mca:CSharpValue>
                   </InArgument>
                 </Assign.Value>
-                <sap2010:WorkflowViewState.IdRef>Assign_2</sap2010:WorkflowViewState.IdRef>
               </Assign>
-              <Assign>
+              <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">
                     <mca:CSharpReference x:TypeArguments="x:String">Result</mca:CSharpReference>
@@ -110,15 +107,12 @@
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Faild try again</InArgument>
                 </Assign.Value>
-                <sap2010:WorkflowViewState.IdRef>Assign_3</sap2010:WorkflowViewState.IdRef>
               </Assign>
               <wb:GenericDictionaryBookMark BookmarkName="ReEnter" sap2010:WorkflowViewState.IdRef="GenericDictionaryBookMark_1" />
-              <sap2010:WorkflowViewState.IdRef>Sequence_2</sap2010:WorkflowViewState.IdRef>
             </Sequence>
             <FlowStep.Next>
               <x:Reference>__ReferenceID0</x:Reference>
             </FlowStep.Next>
-            <sap2010:WorkflowViewState.IdRef>FlowStep_3</sap2010:WorkflowViewState.IdRef>
           </FlowStep>
         </FlowDecision.False>
       </FlowDecision>
@@ -126,7 +120,7 @@
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
-    <sads:DebugSymbol.Symbol>d1lDOlxQcm9qZWN0c1xXb3JrZmxvd01hbmdlclxXb3JrZmxvd01hbmFnZXJcVGVzdFdvcmtmbG93SW5NdmNcV29ya2Zsb3dTdG9yZVxBY3Rpdml0eTEueGFtbA4/A4IBDwIBAUYLRnoCAR5aDXUYAgEJSg1UFgIBAlsPZxgCARNoD3IYAgEMcw9zhAECAQpROFE/AgEITRNNXwIBA2MVY2ACARleFV5mAgEUbzpvSQIBEmsVa2ECAQ1zOnNDAgEL</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d1dDOlxQcm9qZWN0c1xXb3JrZmxvd01hbmdlclxXb3JrZmxvd01hbmFnZXJcV2ViQXBwbGljYXRpb24xXFdvcmtmbG93U3RvcmVcQWN0aXZpdHkxLnhhbWwOPwN8DwIBAUYLRnoCAR5YDXAYAgEJSg1TFgIBAlkPZBgCARNlD24YAgEMbw9vhAECAQpROFE/AgEITRNNXwIBA2EVYWACARlcFVxmAgEUbDpsSQIBEmgVaGECAQ1vOm9DAgEL</sads:DebugSymbol.Symbol>
   </Flowchart>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>

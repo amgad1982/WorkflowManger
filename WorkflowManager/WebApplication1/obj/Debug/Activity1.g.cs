@@ -21,7 +21,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
         
         private System.Activities.InArgument<string> _Password;
         
-        private System.Activities.OutArgument<string> _Result;
+        private System.Activities.InOutArgument<string> _Result;
         
 partial void BeforeInitializeComponent(ref bool isInitialized);
 
@@ -51,7 +51,7 @@ partial void AfterInitializeComponent();
             }
         }
         
-        public System.Activities.OutArgument<string> Result {
+        public System.Activities.InOutArgument<string> Result {
             get {
                 return this._Result;
             }

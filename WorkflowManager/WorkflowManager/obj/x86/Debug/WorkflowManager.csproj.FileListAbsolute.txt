@@ -3,3 +3,4 @@ C:\Projects\WorkflowManger\WorkflowManager\WorkflowManager\bin\Debug\WorkflowMan
 C:\Projects\WorkflowManger\WorkflowManager\WorkflowManager\bin\Debug\WorkflowManager.pdb
 C:\Projects\WorkflowManger\WorkflowManager\WorkflowManager\obj\x86\Debug\WorkflowManager.dll
 C:\Projects\WorkflowManger\WorkflowManager\WorkflowManager\obj\x86\Debug\WorkflowManager.pdb
+C:\Projects\WorkflowManger\WorkflowManager\WorkflowManager\obj\x86\Debug\WorkflowManager.csprojAssemblyReference.cache
