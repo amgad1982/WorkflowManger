@@ -54,9 +54,15 @@ namespace XamlStaticHelperNamespace {
             assemblyList.Add(Load("mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"));
             assemblyList.Add(Load("System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364" +
                         "e35"));
+            assemblyList.Add(Load("System.Activities.DurableInstancing, Version=4.0.0.0, Culture=neutral, PublicKeyT" +
+                        "oken=31bf3856ad364e35"));
+            assemblyList.Add(Load("System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11" +
+                        "d50a3a"));
             assemblyList.Add(Load("System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"));
             assemblyList.Add(Load("System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"));
             assemblyList.Add(Load("System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"));
+            assemblyList.Add(Load("System.Runtime.DurableInstancing, Version=4.0.0.0, Culture=neutral, PublicKeyToke" +
+                        "n=31bf3856ad364e35"));
             assemblyList.Add(Load("System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b7" +
                         "7a5c561934e089"));
             assemblyList.Add(Load("System.ServiceModel.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=" +

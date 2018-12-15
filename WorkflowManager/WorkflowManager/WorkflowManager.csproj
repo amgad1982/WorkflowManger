@@ -55,6 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookMark.cs" />
+    <Compile Include="BookMarkActivities\GenericDictionaryBookMark.cs" />
+    <Compile Include="BookMarkActivities\GenericBooleanBookMark.cs" />
+    <Compile Include="BookMarkActivities\GenericdecisionBookMark.cs" />
+    <Compile Include="BookMarkActivities\GenericStringBookMark.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="IInstanceRepository.cs" />
     <Compile Include="ILogger.cs" />

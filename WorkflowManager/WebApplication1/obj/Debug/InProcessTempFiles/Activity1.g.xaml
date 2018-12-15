@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tw:Activity1 xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:tw="clr-namespace:TestWorkflowInMvc.WorkflowStore;assembly=WebApplication1" xmlns:wb="clr-namespace:WorkflowManager.BookMarkActivities;assembly=WorkflowManager" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System.Web.DynamicData</AssemblyReference>
+      <AssemblyReference>System.Web.Entity</AssemblyReference>
+      <AssemblyReference>System.Web.ApplicationServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.DataAnnotations</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Web.Extensions</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Web</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Configuration</AssemblyReference>
+      <AssemblyReference>System.Web.Services</AssemblyReference>
+      <AssemblyReference>System.EnterpriseServices</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeDom.Providers.DotNetCompilerPlatform</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Net.Http.Formatting</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Web.Http</AssemblyReference>
+      <AssemblyReference>System.Web.Http.WebHost</AssemblyReference>
+      <AssemblyReference>WorkflowManager</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>TestWorkflowInMvc</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <tw:Activity1.Implementation>
+    <Flowchart>
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="ErrorCounter" />
+      </Flowchart.Variables>
+      <Flowchart.StartNode>
+        <FlowDecision x:Name="__ReferenceID0">
+          <FlowDecision.Condition>
+            <mca:CSharpValue x:TypeArguments="x:Boolean">UserName=="amgad"&amp;&amp; Password=="password"</mca:CSharpValue>
+          </FlowDecision.Condition>
+          <FlowDecision.True>
+            <FlowStep x:Name="__ReferenceID2">
+              <Assign>
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">
+                    <mca:CSharpReference x:TypeArguments="x:String">Result</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Success</InArgument>
+                </Assign.Value>
+              </Assign>
+            </FlowStep>
+          </FlowDecision.True>
+          <FlowDecision.False>
+            <FlowStep x:Name="__ReferenceID1">
+              <Sequence>
+                <Assign>
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">
+                      <mca:CSharpReference x:TypeArguments="x:Int32">ErrorCounter</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">
+                      <mca:CSharpValue x:TypeArguments="x:Int32">ErrorCounter+1</mca:CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign>
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">
+                      <mca:CSharpReference x:TypeArguments="x:String">Result</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">Faild try again</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <wb:GenericDictionaryBookMark BookmarkName="ReEnter" />
+              </Sequence>
+              <FlowStep.Next>
+                <x:Reference>__ReferenceID0</x:Reference>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowDecision.False>
+        </FlowDecision>
+      </Flowchart.StartNode>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <sads:DebugSymbol.Symbol>d1lDOlxQcm9qZWN0c1xXb3JrZmxvd01hbmdlclxXb3JrZmxvd01hbmFnZXJcVGVzdFdvcmtmbG93SW5NdmNcV29ya2Zsb3dTdG9yZVxBY3Rpdml0eTEueGFtbA4/A4IBDwIBAUYLRnoCAR5aDXUYAgEJSg1UFgIBAlsPZxgCARNoD3IYAgEMcw9zhAECAQpROFE/AgEITRNNXwIBA2MVY2ACARleFV5mAgEUbzpvSQIBEmsVa2ECAQ1zOnNDAgEL</sads:DebugSymbol.Symbol>
+    </Flowchart>
+  </tw:Activity1.Implementation>
+</tw:Activity1>

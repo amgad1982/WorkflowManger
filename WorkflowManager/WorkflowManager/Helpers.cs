@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Activities;
+using System.Activities.Hosting;
 using System.Activities.Validation;
 using System.Activities.XamlIntegration;
 using System.Collections.Generic;
@@ -106,12 +107,31 @@ namespace WorkflowManager
                 return null;
             }
         }
-        public static string ConvertBookmakListToCommaSeparatedString(this ReadOnlyCollection<Bookmark> bookmarks)
+        public static string ConvertBookmakListToCommaSeparatedString(this ReadOnlyCollection<BookmarkInfo> bookmarks)
         {
             var coll = new CommaDelimitedStringCollection();
-            foreach(Bookmark b in bookmarks)
+            //var actioncoll = new CommaDelimitedStringCollection();
+            foreach(var b in bookmarks)
             {
-                coll.Add(b.Name);
+                //actioncoll.Clear();
+                //foreach (string s in b.BookMarkActions)
+                //{
+                //    actioncoll.Add(s);
+                //}
+                //var output = b.Name + (actioncoll.Count > 0 ? "-" + actioncoll.ToString() : "");
+                coll.Add(b.BookmarkName);
+            }
+            return coll.ToString();
+        }
+
+        public static string ConvertStringListToCommaSeparatedString(this List<string> list)
+        {
+            var coll = new CommaDelimitedStringCollection();
+            
+            foreach (var s in list)
+            {
+               
+                coll.Add(s);
             }
             return coll.ToString();
         }

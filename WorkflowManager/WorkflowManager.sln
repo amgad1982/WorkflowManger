@@ -5,16 +5,30 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManager", "WorkflowManager\WorkflowManager.csproj", "{F9C5B581-0674-4205-B899-0C58EE0CF3E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{25E231AF-76AE-481B-B6FB-44B3AE5212EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9C5B581-0674-4205-B899-0C58EE0CF3E4}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{F9C5B581-0674-4205-B899-0C58EE0CF3E4}.Debug|x86.ActiveCfg = Debug|x86
 		{F9C5B581-0674-4205-B899-0C58EE0CF3E4}.Debug|x86.Build.0 = Debug|x86
+		{F9C5B581-0674-4205-B899-0C58EE0CF3E4}.Release|Any CPU.ActiveCfg = Release|x86
 		{F9C5B581-0674-4205-B899-0C58EE0CF3E4}.Release|x86.ActiveCfg = Release|x86
 		{F9C5B581-0674-4205-B899-0C58EE0CF3E4}.Release|x86.Build.0 = Release|x86
+		{25E231AF-76AE-481B-B6FB-44B3AE5212EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E231AF-76AE-481B-B6FB-44B3AE5212EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E231AF-76AE-481B-B6FB-44B3AE5212EC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{25E231AF-76AE-481B-B6FB-44B3AE5212EC}.Debug|x86.Build.0 = Debug|Any CPU
+		{25E231AF-76AE-481B-B6FB-44B3AE5212EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E231AF-76AE-481B-B6FB-44B3AE5212EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E231AF-76AE-481B-B6FB-44B3AE5212EC}.Release|x86.ActiveCfg = Release|Any CPU
+		{25E231AF-76AE-481B-B6FB-44B3AE5212EC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

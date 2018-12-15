@@ -8,6 +8,7 @@ namespace WorkflowManager
 {
     public interface IInstanceRepository
     {
+        WorkflowInstance LoadWorkflowInstance(Guid instanceId);
         void SaveWorkflowInstanceState(Guid instanceId,string workflowName, InstanceState instanceStatus, string instanceNextBookMarks);
         void UpdateWorkflowInstanceState(Guid instanceId, InstanceState instanceStatus, string instanceNextBookMarks);
     }

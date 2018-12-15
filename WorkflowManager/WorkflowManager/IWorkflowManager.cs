@@ -7,9 +7,9 @@ namespace WorkflowManager
     {
         Guid NewWorkFlow(string workflowName, IDictionary<string, object> parameters);
         List<WorkflowInstance> GetWorkflows(Action<WorkflowInstance> filter = null);
-        List<BookMark> GetBookMarks(Guid workflowInstanceId);
+        List<string> GetBookMarks(Guid workflowInstanceId);
         WorkflowInstance LoadWorkflow(Guid instanceId);
         void Terminate(Guid instanceId);
-        
+        WorkflowInstance LoadWorkFlowWithBookMarkResume(Guid instanceId, string bookmarkName,object value);
     }
 }

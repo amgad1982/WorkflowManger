@@ -1,0 +1,4 @@
+obj\Debug\_WebApplication1.g.cs
+obj\Debug\Activity1.g.cs
+obj\Debug\TestWorkflowInMvc.WorkflowStore_Activity1_BeforeInitializeComponentHelper.cs
+C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\obj\Debug\TestWorkflowInMvc.WorkflowStore_Activity1_CompiledExpressionRoot.cs

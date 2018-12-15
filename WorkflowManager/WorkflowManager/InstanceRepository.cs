@@ -5,6 +5,7 @@ using System.Activities.XamlIntegration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Linq;
 using System.Xaml;
 using System.Xml;
 
@@ -23,37 +24,42 @@ namespace WorkflowManager
             this._connection = new SqlConnection(connectionString);
             _command = _connection.CreateCommand();
         }
-      
 
-        //public WorkflowDefinition LoadWorkflowInstance(Guid instanceId)
-        //{
-        //    var sqlstring = "select * from WorkflowInstances where InstanceId=@InstanceId";
-        //    this._command.CommandText = sqlstring;
-        //    this._command.Parameters.AddWithValue("@InstanceId", instanceId);
 
-        //    try
-        //    {
-        //        var definition = new WorkflowDefinition();
-        //        _connection.Open();
-        //        using (var reader = _command.ExecuteReader(CommandBehavior.CloseConnection))
-        //        {
-        //            definition.Id = (int)reader["Id"];
-        //            definition.Name = reader["WorkflowName"].ToString();
-        //            definition.State = (InstanceState)reader["InstanceStatus"];
-        //            definition.InstanceId = (Guid)reader["InstanceId"];
-        //        };
-        //        return definition;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        this._errorLogger.Log(e.Message, LoggerInfoTypes.Error);
-        //        return null;
-        //    }
+        public WorkflowInstance LoadWorkflowInstance(Guid instanceId)
+        {
+            _command.Parameters.Clear();
+            var sqlstring = "select * from WorkflowInstances where InstanceId=@InstanceId";
+            this._command.CommandText = sqlstring;
+            this._command.Parameters.AddWithValue("@InstanceId", instanceId);
 
-        //}
+            try
+            {
+                WorkflowInstance insttance=new WorkflowInstance("") ;
+                _connection.Open();
+                using (var reader = _command.ExecuteReader(CommandBehavior.CloseConnection))
+                {
+                    while (reader.Read())
+                    {
+                        insttance.WorkflowName = reader["WorkflowName"].ToString();
+                        insttance.State = (InstanceState)reader["InstanceStatus"];
+                        insttance.InstanceId = (Guid)reader["InstanceId"];
+                        insttance.SetBookMarks(reader["InstanceNextBookMarks"].ToString().Split(',').ToList());
+                    }
+                };
+                return insttance;
+            }
+            catch (Exception e)
+            {
+                this._errorLogger.Log(e.Message, LoggerInfoTypes.Error);
+                return null;
+            }
+
+        }
 
         public void SaveWorkflowInstanceState(Guid instanceId,string workflowName, InstanceState instanceStatus, string instanceNextBookMarks)
         {
+            _command.Parameters.Clear();
             var sqlstring = "Insert into WorkflowInstances (InstanceId,WorkflowName,InstanceStatus,InstanceNextBookMarks) values (@InstanceId,@WorkflowName,@InstanceStatus,@InstanceNextBookMarks)";
             this._command.CommandText = sqlstring;
             
@@ -79,7 +85,8 @@ namespace WorkflowManager
 
         public void UpdateWorkflowInstanceState(Guid id,InstanceState instanceStatus, string instanceNextBookMarks)
         {
-            var sqlstring = "update  WorkflowInstances set (InstanceStatus=@InstanceStatus,InstanceNextBookMarks=@InstanceNextBookMarks) where InstanceId=@id ";
+            _command.Parameters.Clear();
+            var sqlstring = "update  WorkflowInstances set InstanceStatus=@InstanceStatus,InstanceNextBookMarks=@InstanceNextBookMarks where InstanceId=@id ";
             this._command.CommandText = sqlstring;
 
             this._command.Parameters.AddWithValue("@id", id);
