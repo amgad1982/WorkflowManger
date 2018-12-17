@@ -1,60 +1,60 @@
 namespace TestWorkflowInMvc.WorkflowStore {
     
-    #line 22 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 22 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System.Collections;
     
     #line default
     #line hidden
     
-    #line 23 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 23 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System.Collections.Generic;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System.Activities;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System.Activities.Expressions;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System.Activities.Statements;
     
     #line default
     #line hidden
     
-    #line 24 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 24 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System.Data;
     
     #line default
     #line hidden
     
-    #line 25 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 25 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System.Linq;
     
     #line default
     #line hidden
     
-    #line 26 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 26 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System.Text;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity1.xaml"
     using System.Activities.XamlIntegration;
     
     #line default
@@ -717,7 +717,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr1GetTree() {
                 
-                #line 88 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 88 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 System.Linq.Expressions.Expression<System.Func<string>> expression = () => 
                     Result;
                 
@@ -729,7 +729,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public string @__Expr1Get() {
                 
-                #line 88 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 88 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 return 
                     Result;
                 
@@ -745,7 +745,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public void @__Expr1Set(string value) {
                 
-                #line 88 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 88 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 
                     Result = value;
                 
@@ -761,7 +761,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr2GetTree() {
                 
-                #line 99 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 99 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 System.Linq.Expressions.Expression<System.Func<bool>> expression = () => 
                     Successful;
                 
@@ -773,7 +773,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public bool @__Expr2Get() {
                 
-                #line 99 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 99 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 return 
                     Successful;
                 
@@ -789,7 +789,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public void @__Expr2Set(bool value) {
                 
-                #line 99 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 99 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 
                     Successful = value;
                 
@@ -805,7 +805,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr3GetTree() {
                 
-                #line 115 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 115 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 System.Linq.Expressions.Expression<System.Func<string>> expression = () => 
                     Result;
                 
@@ -817,7 +817,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public string @__Expr3Get() {
                 
-                #line 115 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 115 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 return 
                     Result;
                 
@@ -833,7 +833,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public void @__Expr3Set(string value) {
                 
-                #line 115 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 115 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 
                     Result = value;
                 
@@ -849,7 +849,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr4GetTree() {
                 
-                #line 126 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 126 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 System.Linq.Expressions.Expression<System.Func<bool>> expression = () => 
                     Successful;
                 
@@ -861,7 +861,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public bool @__Expr4Get() {
                 
-                #line 126 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 126 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 return 
                     Successful;
                 
@@ -877,7 +877,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public void @__Expr4Set(bool value) {
                 
-                #line 126 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 126 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 
                     Successful = value;
                 
@@ -893,7 +893,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr5GetTree() {
                 
-                #line 137 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 137 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 System.Linq.Expressions.Expression<System.Func<string>> expression = () => 
                     Result;
                 
@@ -905,7 +905,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public string @__Expr5Get() {
                 
-                #line 137 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 137 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 return 
                     Result;
                 
@@ -921,7 +921,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public void @__Expr5Set(string value) {
                 
-                #line 137 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 137 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 
                     Result = value;
                 
@@ -986,7 +986,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr0GetTree() {
                 
-                #line 80 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 80 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 System.Linq.Expressions.Expression<System.Func<bool>> expression = () => 
               UserName=="amgad"&&Password=="password";
                 
@@ -998,7 +998,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public bool @__Expr0Get() {
                 
-                #line 80 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 80 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 return 
               UserName=="amgad"&&Password=="password";
                 
@@ -1013,7 +1013,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr6GetTree() {
                 
-                #line 151 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 151 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 System.Linq.Expressions.Expression<System.Func<bool>> expression = () => 
             Successful;
                 
@@ -1025,7 +1025,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public bool @__Expr6Get() {
                 
-                #line 151 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 151 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 return 
             Successful;
                 
@@ -1040,7 +1040,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr7GetTree() {
                 
-                #line 160 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 160 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 System.Linq.Expressions.Expression<System.Func<bool>> expression = () => 
             !Successful;
                 
@@ -1052,7 +1052,7 @@ namespace TestWorkflowInMvc.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public bool @__Expr7Get() {
                 
-                #line 160 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
+                #line 160 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY1.XAML"
                 return 
             !Successful;
                 

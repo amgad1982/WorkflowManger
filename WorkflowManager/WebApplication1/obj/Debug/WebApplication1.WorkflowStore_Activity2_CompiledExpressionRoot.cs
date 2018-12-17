@@ -1,60 +1,60 @@
 namespace WebApplication1.WorkflowStore {
     
-    #line 20 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 20 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System.Collections;
     
     #line default
     #line hidden
     
-    #line 21 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 21 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System.Collections.Generic;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System.Activities;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System.Activities.Expressions;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System.Activities.Statements;
     
     #line default
     #line hidden
     
-    #line 22 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 22 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System.Data;
     
     #line default
     #line hidden
     
-    #line 23 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 23 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System.Linq;
     
     #line default
     #line hidden
     
-    #line 24 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 24 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System.Text;
     
     #line default
     #line hidden
     
-    #line 1 "C:\Projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
+    #line 1 "E:\projects\WorkflowManger\WorkflowManager\WebApplication1\WorkflowStore\Activity2.xaml"
     using System.Activities.XamlIntegration;
     
     #line default
@@ -317,7 +317,7 @@ namespace WebApplication1.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr1GetTree() {
                 
-                #line 79 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
+                #line 79 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
                 System.Linq.Expressions.Expression<System.Func<string>> expression = () => 
           Message;
                 
@@ -329,7 +329,7 @@ namespace WebApplication1.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public string @__Expr1Get() {
                 
-                #line 79 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
+                #line 79 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
                 return 
           Message;
                 
@@ -345,7 +345,7 @@ namespace WebApplication1.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public void @__Expr1Set(string value) {
                 
-                #line 79 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
+                #line 79 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
                 
           Message = value;
                 
@@ -430,7 +430,7 @@ namespace WebApplication1.WorkflowStore {
             
             internal System.Linq.Expressions.Expression @__Expr0GetTree() {
                 
-                #line 84 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
+                #line 84 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
                 System.Linq.Expressions.Expression<System.Func<string>> expression = () => 
           "Hello "+Name;
                 
@@ -442,7 +442,7 @@ namespace WebApplication1.WorkflowStore {
             [System.Diagnostics.DebuggerHiddenAttribute()]
             public string @__Expr0Get() {
                 
-                #line 84 "C:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
+                #line 84 "E:\PROJECTS\WORKFLOWMANGER\WORKFLOWMANAGER\WEBAPPLICATION1\WORKFLOWSTORE\ACTIVITY2.XAML"
                 return 
           "Hello "+Name;
                 

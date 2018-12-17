@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Linq;
 using System.Runtime.DurableInstancing;
 using System.Threading;
+using WorkflowManager.WorkflowExtensions;
 
 namespace WorkflowManager
 {
@@ -50,7 +51,8 @@ namespace WorkflowManager
                 WorkflowApplication app = new WorkflowApplication(activity);
                 app.Extensions.Add(() =>
                 {
-                    TrackingParticipant participant = new LoggerTrackingParticipant(this._infoLogger);
+                    SQLTrackingPaticipant participant = new SQLTrackingPaticipant();
+                    participant.ConnectionString = _connectionString;
                     participant.TrackingProfile = CreateTrackingProfile();
                     return participant;
                 });
@@ -105,11 +107,11 @@ namespace WorkflowManager
             var activity = Helpers.LoadWorkflowActiovityFromXaml(this._workflowRepositoryPath + workflowName, this._errorLogger);
             if (activity != null)
             {
-                WorkflowApplication app = new WorkflowApplication(activity);
+                WorkflowApplication app = new WorkflowApplication(activity,parameters);
                 app.Extensions.Add(() =>
                 {
-                    TrackingParticipant participant = new LoggerTrackingParticipant(this._infoLogger);
-                     participant.TrackingProfile = CreateTrackingProfile();
+                    SQLTrackingPaticipant participant = new SQLTrackingPaticipant();
+                    participant.ConnectionString = _connectionString;
                     return participant;
                 });
                
@@ -124,7 +126,7 @@ namespace WorkflowManager
                     handle.Free();
                     store.DefaultInstanceOwner = view.InstanceOwner;
                     app.InstanceStore = store;
-                    app.PersistableIdle = (e) => { return PersistableIdleAction.Persist; };
+                    app.PersistableIdle = (e) => { return PersistableIdleAction.Unload; };
                     
                 }
                 try
@@ -205,7 +207,7 @@ namespace WorkflowManager
 
         public void OnUnloaded(WorkflowApplicationEventArgs e)
         {
-            //this._repository.UpdateWorkflowInstanceState(e.InstanceId, InstanceState.Unloaded, this._managedWorkflows.First(wf => wf.InstanceId == e.InstanceId).Bookmarks.ConvertStringListToCommaSeparatedString());
+            
         }
 
        

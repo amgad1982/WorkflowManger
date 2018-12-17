@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookMark.cs" />
+    <Compile Include="BookMarkActivities\GenericIntegerBookMark.cs" />
     <Compile Include="BookMarkActivities\GenericDictionaryBookMark.cs" />
     <Compile Include="BookMarkActivities\GenericBooleanBookMark.cs" />
     <Compile Include="BookMarkActivities\GenericdecisionBookMark.cs" />
@@ -66,7 +67,12 @@
     <Compile Include="InstanceState.cs" />
     <Compile Include="IWorkflowInstanceHandeler.cs" />
     <Compile Include="IWorkflowManager.cs" />
+    <Compile Include="Models\Parameter.cs" />
+    <Compile Include="Models\ParameterType.cs" />
+    <Compile Include="Models\WorkflowCommand.cs" />
+    <Compile Include="Models\WorkflowCommandType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkflowExtensions\SQLTrackingPaticipant.cs" />
     <Compile Include="WorkflowInstance.cs" />
     <Compile Include="WorkflowManager.cs" />
   </ItemGroup>
