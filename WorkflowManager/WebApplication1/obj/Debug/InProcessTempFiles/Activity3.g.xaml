@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<c:Activity3 xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:c="clr-namespace:ConsoleHostTest;assembly=WebApplication1" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<c:Activity3 xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:c="clr-namespace:ConsoleHostTest;assembly=WebApplication1" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:wb="clr-namespace:WorkflowManager.BookMarkActivities;assembly=WorkflowManager" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System</x:String>
@@ -80,16 +80,13 @@
                           <State.Entry>
                             <Sequence>
                               <WriteLine Text="Under Review" />
-                              <Assign>
-                                <Assign.To>
+                              <wb:GenericIntegerBookMark BookmarkName="WaitingApproval">
+                                <wb:GenericIntegerBookMark.Result>
                                   <OutArgument x:TypeArguments="x:Int32">
                                     <mca:CSharpReference x:TypeArguments="x:Int32">IsAccepted</mca:CSharpReference>
                                   </OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                                </Assign.Value>
-                              </Assign>
+                                </wb:GenericIntegerBookMark.Result>
+                              </wb:GenericIntegerBookMark>
                             </Sequence>
                           </State.Entry>
                           <State.Transitions>
@@ -147,7 +144,7 @@
       <StateMachine.Variables>
         <Variable x:TypeArguments="x:Int32" Name="IsAccepted" />
       </StateMachine.Variables>
-      <sads:DebugSymbol.Symbol>d1dFOlxwcm9qZWN0c1xXb3JrZmxvd01hbmdlclxXb3JrZmxvd01hbmFnZXJcV2ViQXBwbGljYXRpb24xXFdvcmtmbG93U3RvcmVcQWN0aXZpdHkzLnhhbWwYSgOkARICAQFVD5QBFwIBJVwXkAEfAgEUch99JwIBD3kneZoBAgENhQEfjAEnAgEITAeYAQ8CAQJXE1dqAgEoXhtqJgIBHW8fb2sCARmCAR+CAWsCARZ0I3R2AgEShwEjhwF0AgELTgtQFgIBBVdRV2cCASlfHV9sAgEjYB1pJgIBHnRhdHMCAROHAWGHAXECAQxPDU9fAgEGX1tfaQIBJGdHZ0gCASJjI2NyAgEfT0tPXAIBBw==</sads:DebugSymbol.Symbol>
+      <sads:DebugSymbol.Symbol>d1dFOlxwcm9qZWN0c1xXb3JrZmxvd01hbmdlclxXb3JrZmxvd01hbmFnZXJcV2ViQXBwbGljYXRpb24xXFdvcmtmbG93U3RvcmVcQWN0aXZpdHkzLnhhbWwYSwOiARICAQFWD5IBFwIBJV0XjgEfAgEUcB97JwIBD3cnd5oBAgENgwEfigEnAgEITQeWAQ8CAQJYE1hqAgEoXxtoJgIBHW0fbWsCARmAAR+AAWsCARZyI3J2AgEShQEjhQF0AgELTwtRFgIBBVhRWGcCASlgHWBsAgEjYR1nOQIBHnJhcnMCAROFAWGFAXECAQxQDVBfAgEGYFtgaQIBJGFFYVYCASJkI2RyAgEfUEtQXAIBBw==</sads:DebugSymbol.Symbol>
     </StateMachine>
   </c:Activity3.Implementation>
 </c:Activity3>

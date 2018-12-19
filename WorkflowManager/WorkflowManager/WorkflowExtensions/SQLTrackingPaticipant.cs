@@ -191,7 +191,7 @@ namespace WorkflowManager.WorkflowExtensions
 
         void CreateTrackingCommand(WorkflowInstanceRecord record)
         {
-            this.Procedure = "[Microsoft.Samples.Tracking].[InsertWorkflowInstanceEvent]";
+            this.Procedure = "[MOJ.WorkflowManger.Tracking].[InsertWorkflowInstanceEvent]";
 
             this.parameters.Add(CreateTrackingCommandParameter("@WorkflowInstanceId", SqlDbType.UniqueIdentifier, null, record.InstanceId));
             this.parameters.Add(CreateTrackingCommandParameter("@WorkflowActivityDefinition", SqlDbType.NVarChar, 256, record.ActivityDefinitionId));
@@ -233,7 +233,7 @@ namespace WorkflowManager.WorkflowExtensions
 
         void CreateTrackingCommand(ActivityStateRecord record)
         {
-            this.Procedure = "[Microsoft.Samples.Tracking].[InsertActivityInstanceEvent]";
+            this.Procedure = "[MOJ.WorkflowManger.Tracking].[InsertActivityInstanceEvent]";
 
             this.parameters.Add(CreateTrackingCommandParameter("@WorkflowInstanceId", SqlDbType.UniqueIdentifier, null, record.InstanceId));
             this.parameters.Add(CreateTrackingCommandParameter("@RecordNumber", SqlDbType.BigInt, null, record.RecordNumber));
@@ -253,7 +253,7 @@ namespace WorkflowManager.WorkflowExtensions
 
         void CreateTrackingCommand(ActivityScheduledRecord record)
         {
-            this.Procedure = "[Microsoft.Samples.Tracking].[InsertActivityScheduledEvent]";
+            this.Procedure = "[MOJ.WorkflowManger.Tracking].[InsertActivityScheduledEvent]";
 
             this.parameters.Add(CreateTrackingCommandParameter("@WorkflowInstanceId", SqlDbType.UniqueIdentifier, null, record.InstanceId));
             this.parameters.Add(CreateTrackingCommandParameter("@RecordNumber", SqlDbType.BigInt, null, record.RecordNumber));
@@ -273,7 +273,7 @@ namespace WorkflowManager.WorkflowExtensions
 
         void CreateTrackingCommand(CancelRequestedRecord record)
         {
-            this.Procedure = "[Microsoft.Samples.Tracking].[InsertActivityCancelRequestedEvent]";
+            this.Procedure = "[MOJ.WorkflowManger.Tracking].[InsertActivityCancelRequestedEvent]";
 
             this.parameters.Add(CreateTrackingCommandParameter("@WorkflowInstanceId", SqlDbType.UniqueIdentifier, null, record.InstanceId));
             this.parameters.Add(CreateTrackingCommandParameter("@RecordNumber", SqlDbType.BigInt, null, record.RecordNumber));
@@ -294,7 +294,7 @@ namespace WorkflowManager.WorkflowExtensions
 
         void CreateTrackingCommand(FaultPropagationRecord record)
         {
-            this.Procedure = "[Microsoft.Samples.Tracking].[InsertFaultPropagationEvent]";
+            this.Procedure = "[MOJ.WorkflowManger.Tracking].[InsertFaultPropagationEvent]";
 
             this.parameters.Add(CreateTrackingCommandParameter("@WorkflowInstanceId", SqlDbType.UniqueIdentifier, null, record.InstanceId));
             this.parameters.Add(CreateTrackingCommandParameter("@RecordNumber", SqlDbType.BigInt, null, record.RecordNumber));
@@ -316,7 +316,7 @@ namespace WorkflowManager.WorkflowExtensions
 
         void CreateTrackingCommand(BookmarkResumptionRecord record)
         {
-            this.Procedure = "[Microsoft.Samples.Tracking].[InsertBookmarkResumptionEvent]";
+            this.Procedure = "[MOJ.WorkflowManger.Tracking].[InsertBookmarkResumptionEvent]";
 
             this.parameters.Add(CreateTrackingCommandParameter("@WorkflowInstanceId", SqlDbType.UniqueIdentifier, null, record.InstanceId));
             this.parameters.Add(CreateTrackingCommandParameter("@RecordNumber", SqlDbType.BigInt, null, record.RecordNumber));
@@ -334,7 +334,7 @@ namespace WorkflowManager.WorkflowExtensions
 
         void CreateTrackingCommand(CustomTrackingRecord record)
         {
-            this.Procedure = "[Microsoft.Samples.Tracking].[InsertCustomTrackingEvent]";
+            this.Procedure = "[MOJ.WorkflowManger.Tracking].[InsertCustomTrackingEvent]";
 
             this.parameters.Add(CreateTrackingCommandParameter("@WorkflowInstanceId", SqlDbType.UniqueIdentifier, null, record.InstanceId));
             this.parameters.Add(CreateTrackingCommandParameter("@RecordNumber", SqlDbType.BigInt, null, record.RecordNumber));

@@ -94,13 +94,12 @@
                         <State.Entry>
                           <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
                             <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Under Review" />
-                            <wb:GenericIntegerBookMark BookmarkName="WaitingApproval">
+                            <wb:GenericIntegerBookMark BookmarkName="WaitingApproval" sap2010:WorkflowViewState.IdRef="GenericIntegerBookMark_1">
                               <wb:GenericIntegerBookMark.Result>
                                 <OutArgument x:TypeArguments="x:Int32">
                                   <mca:CSharpReference x:TypeArguments="x:Int32">IsAccepted</mca:CSharpReference>
                                 </OutArgument>
                               </wb:GenericIntegerBookMark.Result>
-                              <sap2010:WorkflowViewState.IdRef>GenericIntegerBookMark_1</sap2010:WorkflowViewState.IdRef>
                             </wb:GenericIntegerBookMark>
                           </Sequence>
                         </State.Entry>
@@ -159,7 +158,7 @@
     <StateMachine.Variables>
       <Variable x:TypeArguments="x:Int32" Name="IsAccepted" />
     </StateMachine.Variables>
-    <sads:DebugSymbol.Symbol>d1dFOlxwcm9qZWN0c1xXb3JrZmxvd01hbmdlclxXb3JrZmxvd01hbmFnZXJcV2ViQXBwbGljYXRpb24xXFdvcmtmbG93U3RvcmVcQWN0aXZpdHkzLnhhbWwYSwOjARICAQFWD5MBFwIBJV0XjwEfAgEUcR98JwIBD3gneJoBAgENhAEfiwEnAgEITQeXAQ8CAQJYE1hqAgEoXxtpJgIBHW4fbmsCARmBAR+BAWsCARZzI3N2AgEShgEjhgF0AgELTwtRFgIBBVhRWGcCASlgHWBsAgEjYR1oOQIBHnNhc3MCAROGAWGGAXECAQxQDVBfAgEGYFtgaQIBJGFFYVYCASJkI2RyAgEfUEtQXAIBBw==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d1dFOlxwcm9qZWN0c1xXb3JrZmxvd01hbmdlclxXb3JrZmxvd01hbmFnZXJcV2ViQXBwbGljYXRpb24xXFdvcmtmbG93U3RvcmVcQWN0aXZpdHkzLnhhbWwYSwOiARICAQFWD5IBFwIBJV0XjgEfAgEUcB97JwIBD3cnd5oBAgENgwEfigEnAgEITQeWAQ8CAQJYE1hqAgEoXxtoJgIBHW0fbWsCARmAAR+AAWsCARZyI3J2AgEShQEjhQF0AgELTwtRFgIBBVhRWGcCASlgHWBsAgEjYR1nOQIBHnJhcnMCAROFAWGFAXECAQxQDVBfAgEGYFtgaQIBJGFFYVYCASJkI2RyAgEfUEtQXAIBBw==</sads:DebugSymbol.Symbol>
   </StateMachine>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -246,7 +245,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="State_4" sap:VirtualizedContainerService.HintSize="326,637">
+      <sap2010:ViewStateData Id="State_4" sap:VirtualizedContainerService.HintSize="326,642">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">120,192.5</av:Point>

@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers
         }
 
         // POST api/<controller>
-        public Guid Post([FromBody]WorkflowCommand command)
+        public WorkflowCommandResponse Post([FromBody]WorkflowCommand command)
         {
             var argument = new Dictionary<string, object>();
 
@@ -36,14 +36,22 @@ namespace WebApplication1.Controllers
             }
 
             manager = new WorkflowManager.WorkflowManager(wfRepoPath, true, false, this, this);
+            var wfResponse = new WorkflowCommandResponse();
             if (command.WorkflowInstanceID == Guid.Empty)
             {
-                return manager.NewWorkFlow("Activity3.xaml", argument);
+                wfResponse.InstanceId= manager.NewWorkFlow("Activity3.xaml", argument);
+                wfResponse.NextWorkflowInstanceActions = manager.GetBookMarks(wfResponse.InstanceId);
+
+                return wfResponse;
             }
             else
             {
-             
-                return manager.LoadWorkFlowWithBookMarkResume(command.WorkflowInstanceID, command.Action.Name,command.Action.Value).InstanceId;
+
+                var wfInstance = manager.LoadWorkFlowWithBookMarkResume(command.WorkflowInstanceID, command.Action.Name,
+                    command.Action.Value);
+                wfResponse.InstanceId = wfInstance.InstanceId;
+                wfResponse.NextWorkflowInstanceActions = wfInstance.Bookmarks;
+                return wfResponse;
             }
         }
 
